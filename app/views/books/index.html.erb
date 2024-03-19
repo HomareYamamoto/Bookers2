@@ -1,5 +1,5 @@
 <div>
-  <h2>User_info</h2>
+  <h2>User info</h2>
   <div><%= image_tag 'sample-author1.jpg' %></div>
   <p>name</p>
   <p><%= current_user.name %></p>
@@ -23,7 +23,7 @@
   <h4>Opinion</h4>
   <% @books.each do |book| %>
   <div>
-    <p><%= link_to book.title, book_path(book.id) %>
+    <p><%= link_to book.title, book_path(book.id) %></p>
     <p><%= book.body %></p>
   </div>
 <% end %>

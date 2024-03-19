@@ -3,7 +3,8 @@
   <div><%= image_tag 'sample-author1.jpg' %></div>
   <p>name</p>
   <p><%= current_user.name %></p>
-
+  <p>introduction</p>
+  <p><%= current_user.introduction %></p>
 </div>
 
 <div>
@@ -23,8 +24,10 @@
 <!--詳細ページへ飛べるリンクがここにもあるがlink_to book.title, book_path(book.id)だとエラーが出る。-->
   <p><%= @book.title %></p>
   <p><%= @book.body %></p>
-  <%= link_to "Edit", book_path(@book.id) %>
+
+
   <% if @book.user == current_user %>
+    <%= link_to "Edit", edit_book_path(@book.id) %>
     <%= link_to "Destroy", book_path(@book), method: :delete %>
   <% end %>
 </div>

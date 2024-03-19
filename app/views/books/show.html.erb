@@ -1,0 +1,28 @@
+<div>
+  <h2>User_info</h2>
+  <div><%= image_tag 'sample-author1.jpg' %></div>
+  <p>name</p>
+  <p><%= current_user.name %></p>
+
+</div>
+
+<div>
+  <h2>New Book</h2>
+  <%= form_with model: @book do |f| %>
+  <h4>Title</h4>
+  <%= f.text_field :title %>
+  <h4>Opinion</h4>
+  <%= f.text_area :body %>
+  <%= f.submit 'Create Book' %>
+<% end %>
+</div>
+
+<div>
+ <h2>Book detail</h2>
+ <%= image_tag 'sample-author1.jpg' %>
+<!--詳細ページへ飛べるリンクがここにもあるがlink_to book.title, book_path(book.id)だとエラーが出る。-->
+  <p><%= @book.title %></p>
+  <p><%= @book.body %></p>
+  <%= link_to "Edit" book_path(@book.id) %>
+  <!--< link_to "Destroy" book_path(@book.id) %>-->
+</div>

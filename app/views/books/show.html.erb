@@ -1,27 +1,9 @@
-<div>
-  <h2>User_info</h2>
-  <div><%= image_tag @book.user.get_profile_image(100,100) %></div>
-  <p>name</p>
-  <p><%= @book.user.name %></p>
-  <p>introduction</p>
-  <p><%= @book.user.introduction %></p>
-  <p><%= link_to "User info edit(仮)", edit_user_path(current_user.id) %></p>
-</div>
+<%= render 'list', user: @user %>
 
-<div>
-  <h2>New Book</h2>
-  <%= form_with model: @book do |f| %>
-  <h4>Title</h4>
-  <%= f.text_field :title %>
-  <h4>Opinion</h4>
-  <%= f.text_area :body %>
-  <%= f.submit 'Create Book' %>
-<% end %>
-</div>
 
 <div>
  <h2>Book detail</h2>
- <%= image_tag 'sample-author1.jpg' %>
+ <div><%= image_tag @book.user.get_profile_image(100,100) %></div>
 <!--詳細ページへ飛べるリンクがここにもあるがlink_to book.title, book_path(book.id)だとエラーが出る。-->
   <p><%= @book.title %></p>
   <p><%= @book.body %></p>

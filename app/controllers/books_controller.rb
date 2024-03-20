@@ -23,6 +23,7 @@ class BooksController < ApplicationController
 
 
   def show
+    @book=Book.new
     @book=Book.find(params[:id])
   end
 
@@ -43,7 +44,7 @@ class BooksController < ApplicationController
   def destroy
     book=Book.find(params[:id])
     book.destroy
-    redirect_to '/books'#全体の投稿一覧に飛ぶように変更必要あり。
+    redirect_to '/books'#ユーザー全体の投稿された本一覧に飛ぶように変更必要あり。
   end
 
 

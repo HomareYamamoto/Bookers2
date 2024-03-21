@@ -1,24 +1,8 @@
-# README
+#課題3
+#スペックテストで正しいものに修正してもそもそも見本も違う気がしてならない
+#見本アプリだとユーザー情報の編集ボタンをほとんどのビューファイルにて表示している
+#そのうえでログインしているユーザーがそのボタンを押すと編集画面へ遷移するが本人でないユーザーがそのボタンを押すと自身のマイページに遷移するようになっている。
+#その挙動を自分のアプリにも取り入れたところ、スペックテストでエラーがなぜか増えてしまう。
+#正直この矛盾に納得がいかないので現段階でエラーが二つ残っているがこのまま提出しようと思う。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

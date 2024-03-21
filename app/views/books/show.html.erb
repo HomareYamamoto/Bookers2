@@ -7,7 +7,7 @@
 <div>
  <h2>Book detail</h2>
  <div><%= image_tag @book.user.get_profile_image(100,100) %></div>
-<!--詳細ページへ飛べるリンクがここにもあるがlink_to book.title, book_path(book.id)だとエラーが出る。-->
+
   <p><%= link_to @book.title, book_path(@book.id) %></p>
   <p><%= @book.body %></p>
 

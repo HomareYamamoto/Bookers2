@@ -47,7 +47,7 @@ before_action :is_matching_login_user, only: [:edit, :update, :destroy]
   def destroy
     book=Book.find(params[:id])
     book.destroy
-    redirect_to '/books'#ユーザー全体の投稿された本一覧に飛ぶように変更必要あり。
+    redirect_to '/books'
   end
 
 
@@ -60,7 +60,8 @@ private
 
   def is_matching_login_user
     @book = Book.find(params[:id])
-    unless @book.user_id == current_user.id
+    @user=@book.user
+    unless @user == current_user
       redirect_to books_path
     end
   end
